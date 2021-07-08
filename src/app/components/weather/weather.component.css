@@ -1,0 +1,9 @@
+.styleCities {
+    font-style: italic;
+    color: #EF233C;
+    text-decoration: none;
+}
+
+a:hover {
+    color: #AD0320;
+}

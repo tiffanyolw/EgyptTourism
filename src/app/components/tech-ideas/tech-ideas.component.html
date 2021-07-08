@@ -1,0 +1,67 @@
+{{nameControl?.errors?.avoidWord}}
+
+
+<form [formGroup]="techIdeas">
+    <div class="form-group mb-3">
+        <label for="name">Name</label>
+        <input type="text" class="form-control" id="name" formControlName="name" />
+
+        <small *ngIf="nameControl?.errors?.required &&
+        nameControl?.touched">
+            Please enter your name
+        </small>
+        <small *ngIf="nameControl?.errors?.minlength &&
+        nameControl?.touched">
+            Your name should be at least 2 letters
+        </small>
+        <small *ngIf="nameControl?.errors?.prohibited &&
+        nameControl?.touched">
+            Name cannot contain the word "tourist"
+        </small>
+    </div>
+    <div class="form-group mb-3">
+        <label for="age">Age</label>
+        <input type="number" class="form-control" id="age" formControlName="age" />
+    </div>
+    <div class="form-group mb-3">
+        <label for="email">Email</label>
+        <input type="email" class="form-control" id="email" formControlName="email" />
+
+        <small *ngIf="emailControl?.errors?.required && emailControl?.touched">
+            Please insert your email
+        </small>
+        <small *ngIf="emailControl?.errors?.email && emailControl?.touched">
+            Please enter an email
+        </small>
+    </div>
+    <div class="form-group mb-3">
+        <label for="city">City</label>
+        <select class="form-control" id="city" formControlName="city">
+            <option value="" selected disabled>Select a city</option>
+            <option *ngFor="let city of cities" [value]="city">
+                {{ city }}
+            </option>
+        </select>
+
+        <small *ngIf="cityControl?.errors?.required && cityControl?.touched">
+            Please choose a city
+        </small>
+    </div>
+    <div class="form-group mb-3">
+        <label for="desc">Description</label>
+        <textarea class="form-control" id="desc" formControlName="desc" rows="4" cols="50"
+            placeholder="Enter a brief description about your tech idea"></textarea>
+
+        <small *ngIf="descControl?.errors?.required && descControl?.touched">
+            Please insert a brief about your idea
+        </small>
+        <small *ngIf="descControl?.errors?.minlength && descControl?.touched">
+            Your brief should be at least 100 characters
+        </small>
+        <small *ngIf="descControl?.errors?.prohibited && descControl?.touched">
+            Your brief cannot contain the word "nothing"
+        </small>
+    </div>
+
+    <button type="submit" class="btn" (click)="onSubmit()" [disabled]="techIdeas.invalid">Submit</button>
+</form>

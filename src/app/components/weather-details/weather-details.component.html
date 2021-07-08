@@ -1,0 +1,56 @@
+<div *ngIf="weather">
+    <h2>Weather in {{ weather.city }}</h2>
+    <table class="table table-bordered">
+        <thead>
+            <tr>
+                <th colspan="2">Spring</th>
+                <th colspan="2">Summer</th>
+                <th colspan="2">Autumn</th>
+                <th colspan="2">Winter</th>
+            </tr>
+            <tr>
+                <th>Morning</th>
+                <th>Evening</th>
+                <th>Morning</th>
+                <th>Evening</th>
+                <th>Morning</th>
+                <th>Evening</th>
+                <th>Morning</th>
+                <th>Evening</th>
+            </tr>
+        </thead>
+
+        <tbody>
+            <tr>
+                <td>
+                    {{ weather.springM }}
+                </td>
+                <td>
+                    {{ weather.springN }}
+                </td>
+                <td>
+                    {{ weather.summerM }}
+                </td>
+                <td>
+                    {{ weather.summerN }}
+                </td>
+                <td>
+                    {{ weather.autumnM }}
+                </td>
+                <td>
+                    {{ weather.autumnN }}
+                </td>
+                <td>
+                    {{ weather.winterM }}
+                </td>
+                <td>
+                    {{ weather.winterN }}
+                </td>
+            </tr>
+        </tbody>
+    </table>
+
+    <div appImportantText>
+        The most suitable time to enjoy your holiday in {{ weather.city }} would be between {{ weather.visitFrom }} and {{ weather.visitTo }}.
+    </div>
+</div>
