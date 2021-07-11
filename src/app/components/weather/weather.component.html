@@ -1,6 +1,6 @@
 <div>
-    <ul>
-        <li *ngFor="let weather of weatherData">
+    <ul class="list-group">
+        <li class="list-group-item" *ngFor="let weather of weatherData">
             <a [routerLink]="weather.city" class="styleCities">
                 {{ weather.city }}
             </a>

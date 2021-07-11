@@ -6,6 +6,7 @@
 
 .nav-link {
     padding: 15px;
+    cursor: pointer;
 }
 
 .active {

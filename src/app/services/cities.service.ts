@@ -13,4 +13,5 @@ export class CitiesService {
   getCitiesInfo(): City[] {
     return this.cities;
   }
+
 }

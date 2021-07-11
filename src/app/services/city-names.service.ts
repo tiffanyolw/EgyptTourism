@@ -1,19 +1,20 @@
 import { Injectable } from '@angular/core';
+import { City } from '../models/city';
 import { CityWeather } from '../models/cityWeather';
-import { WeatherService } from './weather.service';
+import { CitiesService } from './cities.service';
 
 @Injectable({
   providedIn: 'root'
 })
 export class CityNamesService {
-  constructor(private _weatherService: WeatherService) { }
+  constructor(private _citiesService: CitiesService) { }
 
   getCityNames(): string[] {
     let names: string[] = [];
-    let cities: CityWeather[] = this._weatherService.getWeather();
+    let cities: City[] = this._citiesService.getCitiesInfo();
 
     cities.forEach((item) => {
-      names.push(item.city);
+      names.push(item.name);
     });
     
     return names;

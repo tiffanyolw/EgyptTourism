@@ -8,7 +8,8 @@
         <div class="collapse navbar-collapse" [ngbCollapse]="isMenuCollapsed">
             <ul class="navbar-nav">
                 <li class="nav-item">
-                    <a class="nav-link" routerLink="/" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">Home</a>
+                    <a class="nav-link" routerLink="/" routerLinkActive="active"
+                        [routerLinkActiveOptions]="{ exact: true }">Home</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" routerLink="/cities" routerLinkActive="active">Cities</a>
@@ -16,6 +17,17 @@
                 <li class="nav-item">
                     <a class="nav-link" routerLink="/weather" routerLinkActive="active">Weather</a>
                 </li>
+                <!-- Dropdown Weather Example
+                <li class="nav-item" ngbDropdown>
+                    <div class="nav-link" (click)="toggleDropdown()" ngbDropdownToggle>Weather</div>
+                    <div *ngIf="showDropdown" ngbDropdownMenu>
+                        <a routerLink="/weather/Aswan" (click)="toggleDropdown()" ngbDropdownItem>Aswan</a>
+                        <a routerLink="/weather/Cairo" (click)="toggleDropdown()" ngbDropdownItem>Cairo</a>
+                        <a routerLink="/weather/Luxor" (click)="toggleDropdown()" ngbDropdownItem>Luxor</a>
+                        <a routerLink="/weather/Sharm Elsheikh" (click)="toggleDropdown()" ngbDropdownItem>Sharm Elsheikh </a>
+                    </div>
+                </li>
+                -->
                 <li class="nav-item">
                     <a class="nav-link" routerLink="/tech-ideas" routerLinkActive="active">Tech Ideas</a>
                 </li>

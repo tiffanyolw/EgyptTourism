@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { collapseTextChangeRangesAcrossMultipleVersions } from 'typescript';
 
 @Component({
   selector: 'app-navbar',
@@ -8,8 +9,13 @@ import { Component, OnInit } from '@angular/core';
 export class NavbarComponent implements OnInit {
   isMenuCollapsed: boolean = true;
   currentPage: string = "";
+  showDropdown = false;
 
   constructor() { }
+
+  toggleDropdown() {
+    this.showDropdown = !this.showDropdown;
+  }
 
   ngOnInit(): void {
   }
